@@ -4,11 +4,20 @@
 package org.example;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
-
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        TreeMap map = new TreeMap();
+        // Insert key-value pairs
+        map.insert("someKey", "someValue");
+        map.insert("anotherKey", "anotherValue");
+
+        // Retrieve values
+        System.out.println(map.get("someKey")); // Output: someValue
+        System.out.println(map.get("anotherKey")); // Output: anotherValue
+
+        // Delete a key
+        map.delete("someKey");
+        System.out.println(map.get("someKey")); // Output: (empty string)
+
+        System.out.println(map.get("keyDoesNotExist")); // Output: (empty string)
     }
 }
